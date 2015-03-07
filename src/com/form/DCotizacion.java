@@ -43,15 +43,15 @@ public class DCotizacion implements Serializable {
     @EmbeddedId
     protected DCotizacionPK dCotizacionPK;
     @Column(name = "Cantidad")
-    private Long cantidad;
+    private double cantidad;
     @Column(name = "descripcion")
     private String descripcion;
     @Column(name = "punitario")
-    private Long punitario;
+    private double punitario;
     @Column(name = "diva")
-    private Long diva;
+    private double diva;
     @Column(name = "dtotal")
-    private Long dtotal;
+    private double dtotal;
     @JoinColumn(name = "idCotizacion", referencedColumnName = "idCotizacion", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private ECotizacion eCotizacion;
@@ -75,12 +75,12 @@ public class DCotizacion implements Serializable {
         this.dCotizacionPK = dCotizacionPK;
     }
 
-    public Long getCantidad() {
+    public double getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Long cantidad) {
-        Long oldCantidad = this.cantidad;
+    public void setCantidad(double cantidad) {
+        double oldCantidad = this.cantidad;
         this.cantidad = cantidad;
         changeSupport.firePropertyChange("cantidad", oldCantidad, cantidad);
     }
@@ -95,32 +95,32 @@ public class DCotizacion implements Serializable {
         changeSupport.firePropertyChange("descripcion", oldDescripcion, descripcion);
     }
 
-    public Long getPunitario() {
+    public double getPunitario() {
         return punitario;
     }
 
-    public void setPunitario(Long punitario) {
-        Long oldPunitario = this.punitario;
+    public void setPunitario(double punitario) {
+        double oldPunitario = this.punitario;
         this.punitario = punitario;
         changeSupport.firePropertyChange("punitario", oldPunitario, punitario);
     }
 
-    public Long getDiva() {
+    public double getDiva() {
         return diva;
     }
 
-    public void setDiva(Long diva) {
-        Long oldDiva = this.diva;
+    public void setDiva(double diva) {
+        double oldDiva = this.diva;
         this.diva = diva;
         changeSupport.firePropertyChange("diva", oldDiva, diva);
     }
 
-    public Long getDtotal() {
+    public double getDtotal() {
         return dtotal;
     }
 
-    public void setDtotal(Long dtotal) {
-        Long oldDtotal = this.dtotal;
+    public void setDtotal(double dtotal) {
+        double oldDtotal = this.dtotal;
         this.dtotal = dtotal;
         changeSupport.firePropertyChange("dtotal", oldDtotal, dtotal);
     }
